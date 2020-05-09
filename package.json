@@ -1,0 +1,19 @@
+{
+  "name": "eos-gate",
+  "version": "1.0.0",
+  "description": "microservice for interacting with blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EOSIO-HACKATHON2020/eos-gate.git"
+  },
+  "author": "Avm07",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EOSIO-HACKATHON2020/eos-gate/issues"
+  },
+  "homepage": "https://github.com/EOSIO-HACKATHON2020/eos-gate#readme"
+}
