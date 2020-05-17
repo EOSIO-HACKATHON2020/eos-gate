@@ -117,3 +117,4 @@ dist
 .swp
 .idea
 .vscode
+package-lock.json
