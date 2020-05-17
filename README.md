@@ -13,6 +13,7 @@ Microservice for interacting with blockchain
 # Environment variables
 
 * PORT
+* SENTRY_DSN
 * EOS_URI 
 * CONTRACT_ACCOUNT
 * PRV_KEY

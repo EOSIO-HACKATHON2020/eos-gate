@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/EOSIO-HACKATHON2020/eos-gate#readme",
   "dependencies": {
+    "@sentry/node": "^5.15.5",
     "dotenv": "^8.2.0",
     "eosjs": "github:EOSIO/eosjs#9351add8cec68eabe299518e5302fe22e920e5f3",
     "express": "^4.17.1",
