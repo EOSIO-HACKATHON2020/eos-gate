@@ -1,11 +1,6 @@
-import * as express from 'express';
-import * as bodyParser from 'body-parser';
-import * as cors from 'cors';
-
 const router = require('../routes/registry');
 
-export default async ({ app }) => {
-
+module.exports = async ({ app }) => {
     app.get('/status', (req, res) => { res.status(200).end(); });
     app.head('/status', (req, res) => { res.status(200).end(); });
     app.use('/', router.create_form);

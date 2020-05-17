@@ -1,10 +1,14 @@
 const { Api, JsonRpc } = require("eosjs");
 const { JsSignatureProvider } = require("eosjs/dist/eosjs-jssig"); // development only
-const nodeFetch = require("node-fetch"); //node only
+const fetch = require("node-fetch"); //node only
 const util = require("util"); //node only
 const config = require('../config');
 
-const signatureProvider = new JsSignatureProvider(config.prv_key);
+// const defaultPrivateKey = "5JtUScZK2XEp3g9gh7F8bwtPTRAkASmNrrftmx4AxDKD5K4zDnr";
+// const signatureProvider = new JsSignatureProvider([defaultPrivateKey]); //works
+// const signatureProvider = new JsSignatureProvider([process.env.PRV_KEY]); //works
+
+const signatureProvider = new JsSignatureProvider([config.prv_key]); //dont work
 const rpc = new JsonRpc(config.nodeosURL, { fetch });
 const api = new Api({ rpc, signatureProvider });
 

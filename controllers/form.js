@@ -1,4 +1,4 @@
-const eosService = require('../services');
+const eosService = require('../services/eos.service');
 
 exports.create_form = function (req, res) {
     eosService.create_form();

@@ -1,15 +1,16 @@
-import { Router, Request, Response } from 'express';
+const { Router, Request, Response } = require('express');
 const route = Router();
-const registry = require('../controllers');
+const form = require('../controllers/form');
+const response = require('../controllers/response');
 
 exports.create_form = function (req, res) {
-  route.post('/createForm', registry.create_form);
+  route.post('/createForm', form.create_form);
 };
 
 exports.delete_form = function (req, res) {
-  route.post('/deleteForm', registry.delete_form);
+  route.post('/deleteForm', form.delete_form);
 };
 
 exports.add_response = function (req, res) {
-  route.post('/addResponse', registry.add_response);
+  route.post('/addResponse', response.add_response);
 };
