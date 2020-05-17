@@ -4,87 +4,81 @@ const fetch = require("node-fetch"); //node only
 const util = require("util"); //node only
 const config = require('../config');
 
-// const defaultPrivateKey = "5JtUScZK2XEp3g9gh7F8bwtPTRAkASmNrrftmx4AxDKD5K4zDnr";
-// const signatureProvider = new JsSignatureProvider([defaultPrivateKey]); //works
-// const signatureProvider = new JsSignatureProvider([process.env.PRV_KEY]); //works
-
-const signatureProvider = new JsSignatureProvider([config.prv_key]); //dont work
-const rpc = new JsonRpc(config.nodeosURL, { fetch });
+const signatureProvider = new JsSignatureProvider([config.private_key]);
+const rpc = new JsonRpc(config.nodeos_url, { fetch });
 const api = new Api({ rpc, signatureProvider });
 
-exports.createForm = async function (formName, questionsList) {
+module.exports.createForm = async function (body) {
     try {
         await api.transact({
             actions: [{
-                account: config.contractAccount,
+                account: config.contract_account,
                 name: 'createform',
                 authorization: [{
-                    actor: config.contractAccount,
+                    actor: config.contract_account,
                     permission: 'active',
                 }],
-                data: {
-                    form: formName,
-                    questions: questionsList,
-                }
+                data: body
             }]
         }, {
             blocksBehind: 3,
             expireSeconds: 30,
         }).then(function (result) {
             console.info('transaction_id is : ', result.transaction_id);
+            return result.transaction_id;
         })
     } catch (e) {
-        console.error('Error while create form', e);
+        console.error('Error while create form:', e);
+        return e;
     }
 };
 
-exports.deleteForm = async function (formName) {
+module.exports.deleteForm = async function (body) {
     try {
         await api.transact({
             actions: [{
-                account: config.contractAccount,
+                account: config.contract_account,
                 name: 'deleteform',
                 authorization: [{
-                    actor: config.contractAccount,
+                    actor: config.contract_account,
                     permission: 'active',
                 }],
-                data: {
-                    form: formName
-                }
+                data: body
             }]
         }, {
             blocksBehind: 3,
             expireSeconds: 30,
         }).then(function (result) {
             console.info('transaction_id is : ', result.transaction_id);
+            return result.transaction_id;
         })
     } catch (e) {
-        console.error('Error while delete form', e);
+        console.error('Error while delete form:', e);
+        return e;
     }
 };
 
-exports.addResponse = async function (formName, answersList) {
+module.exports.addResponse = async function (body) {
     try {
         await api.transact({
             actions: [{
-                account: config.contractAccount,
+                account: config.contract_account,
                 name: 'addresponse',
                 authorization: [{
-                    actor: config.contractAccount,
+                    actor: config.contract_account,
                     permission: 'active',
                 }],
-                data: {
-                    form: formName,
-                    answers: answersList,
-                }
+                data: body
             }]
         }, {
             blocksBehind: 3,
             expireSeconds: 30,
         }).then(function (result) {
             console.info('transaction_id is : ', result.transaction_id);
+            return result.transaction_id;
         })
     } catch (e) {
-        console.error('Error while add response', e);
+        console.error('Error while add response:', e);
+        return e;
     }
 };

@@ -4,7 +4,7 @@ dotenv.config();
 
 module.exports = {
     port: process.env.PORT,
-    nodeosURL: process.env.EOS_URI,
-    contractAccount: process.env.CONTRACT_ACCOUNT,
-    prvKey: process.env.PRV_KEY
+    nodeos_url: process.env.EOS_URI,
+    contract_account: process.env.CONTRACT_ACCOUNT,
+    private_key: process.env.PRV_KEY
 }

@@ -1,11 +1,13 @@
 const eosService = require('../services/eos.service');
 
-exports.create_form = function (req, res) {
-    eosService.create_form();
-    res.send('NOT IMPLEMENTED: Create form');
+module.exports.create_form = function (req, res) {
+    console.info('REQUEST:',`${req.method} ${req.originalUrl} ${req.body}`);
+    let result = eosService.createForm(req.body);
+    res.status(200).send(result);
 };
 
-exports.delete_form = function (req, res) {
-    eosService.delete_form();
-    res.send('NOT IMPLEMENTED: Delete form');
+module.exports.delete_form = function (req, res) {
+    console.info('REQUEST:',`${req.method} ${req.originalUrl} ${req.body}`);
+    let result = eosService.deleteForm(req.body);
+    res.status(200).send(result);
 };

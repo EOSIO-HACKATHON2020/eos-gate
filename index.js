@@ -14,7 +14,6 @@ async function startServer() {
             return;
         }
         console.log(`eos-gate starts...`, config.port);
-        console.log(config.prvKey);
     });
 }
 

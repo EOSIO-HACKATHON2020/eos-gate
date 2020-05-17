@@ -1,6 +1,7 @@
 const eosService = require('../services/eos.service');
 
-exports.add_response = function (req, res) {
-    eosService.add_response();
-    res.send('NOT IMPLEMENTED: Add response');
+module.exports.add_response = function (req, res) {
+    console.info('REQUEST:',`${req.method} ${req.originalUrl} ${req.body}`);
+    let result = eosService.addResponse(req.body);
+    res.status(200).send(result);
 };
