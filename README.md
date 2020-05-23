@@ -30,17 +30,29 @@ npm start
 ```
 POST /form
 
-
+{
+   "form":"testname",
+   "questions":[
+      "This is test question"
+   ]
+}
 ```
 
 ```
 DELETE /form
 
-
+{
+   "form":"testname",
+}
 ```
 
 ```
 POST /response
 
-
+{
+   "form":"testname",
+   "answers":[
+      "This is test answer"
+   ]
+}
 ```
