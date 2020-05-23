@@ -9,6 +9,7 @@ Microservice for interacting with blockchain
 * dotenv
 * node-fetch
 * fetch
+* @sentry/nodу
 
 # Environment variables
 
@@ -22,4 +23,24 @@ Microservice for interacting with blockchain
 
 ```
 npm start
+```
+
+# Examples
+
+```
+POST /form
+
+
+```
+
+```
+DELETE /form
+
+
+```
+
+```
+POST /response
+
+
 ```
