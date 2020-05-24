@@ -56,3 +56,12 @@ POST /response
    ]
 }
 ```
+
+
+curl --header "Content-Type: application/json" \
+  --request POST
+  --data '{"form": "tocds1zyedzc","questions": ["What's up?"]}' \
+  http://localhost:8080/form
+
+
+  {"form": "tocds1zyedzc","questions": ["What's up?"]}

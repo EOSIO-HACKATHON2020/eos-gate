@@ -28,8 +28,8 @@ module.exports.createForm = async function (body) {
             return result.transaction_id;
         })
     } catch (e) {
-        console.error('Error while create form:', e);
-        return e;
+        console.error('Error while create form:', e.message);
+        return e.message;
     }
 };
 
@@ -53,8 +53,8 @@ module.exports.deleteForm = async function (body) {
             return result.transaction_id;
         })
     } catch (e) {
-        console.error('Error while delete form:', e);
-        return e;
+        console.error('Error while delete form:', e.message);
+        return e.message;
     }
 };
 
@@ -78,7 +78,7 @@ module.exports.addResponse = async function (body) {
             return result.transaction_id;
         })
     } catch (e) {
-        console.error('Error while add response:', e);
-        return e;
+        console.error('Error while add response:', e.message);
+        return e.message;
     }
 };

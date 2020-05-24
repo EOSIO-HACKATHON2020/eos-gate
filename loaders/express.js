@@ -1,8 +1,10 @@
 const Sentry = require('@sentry/node');
 const form = require('../controllers/form');
 const response = require('../controllers/response');
+const bodyParser = require('body-parser');
 
 module.exports = async ({ app }) => {
+    app.use(bodyParser.json());
     app.use(Sentry.Handlers.requestHandler());
     app.get('/status', (req, res) => { res.status(200).end(); });
     app.head('/status', (req, res) => { res.status(200).end(); });
