@@ -7,5 +7,6 @@ module.exports.add_response = function (req, res) {
         res.status(200).end();
         console.info('\nRESPONSE:', res.statusCode, res.statusMessage);
         console.info(res.body);
+        res.send();
     });
 };
